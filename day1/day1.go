@@ -1,14 +1,13 @@
 package day1
 
 import (
-	"bufio"
 	"errors"
 	"fmt"
 	"log"
-	"os"
-	"path"
 	"strconv"
 	"unicode"
+
+	"github.com/aidanking/aoc-2023-golang/inputfiles"
 )
 
 var words = map[string]int{"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9}
@@ -17,9 +16,9 @@ const longestWordLen = len("three")
 const shortestWordLen = len("one")
 
 func PrintSolution() {
-	testDataPart1 := readLinesFromFile("day1", "test-part-1.txt")
-	testDataPart2 := readLinesFromFile("day1", "test-part-2.txt")
-	data := readLinesFromFile("day1", "input.txt")
+	testDataPart1 := inputfiles.ReadLinesFromFile("day1", "test-part-1.txt")
+	testDataPart2 := inputfiles.ReadLinesFromFile("day1", "test-part-2.txt")
+	data := inputfiles.ReadLinesFromFile("day1", "input.txt")
 
 	fmt.Println("Day 1")
 	fmt.Println("Part 1")
@@ -109,36 +108,4 @@ func findWord(startIndex int, line string) (int, error) {
 	}
 
 	return 0, errors.New("word not found")
-}
-
-func readLinesFromFile(dayKey string, fileName string) []string {
-
-	wdName, wdErr := os.Getwd()
-
-	if wdErr != nil {
-		log.Fatal(wdErr)
-	}
-
-	file, fileErr := os.Open(path.Join(wdName, dayKey, fileName))
-
-	if fileErr != nil {
-		log.Fatal(fileErr)
-	}
-
-	defer file.Close()
-
-	scanner := bufio.NewScanner(file)
-
-	var lines []string
-
-	for scanner.Scan() {
-		line := scanner.Text()
-		lines = append(lines, line)
-	}
-
-	if scannerErr := scanner.Err(); scannerErr != nil {
-		log.Fatal(scannerErr)
-	}
-
-	return lines
 }
