@@ -23,11 +23,13 @@ func PrintSolution() {
 	fmt.Println("Part 1")
 	fmt.Println("Test Solution:", part1(testData))
 	fmt.Println("Solution:", part1(inputData))
+	fmt.Println("Part 2")
 	fmt.Println("Test Solution:", part2(testData))
 	fmt.Println("Solution:", part2(inputData))
 	fmt.Println("")
 
 }
+
 func part1(schema [][]string) int {
 	result := 0
 
