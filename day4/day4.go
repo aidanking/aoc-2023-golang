@@ -25,7 +25,7 @@ func PrintSolution() {
 	fmt.Println("Part 1")
 	fmt.Println("Test Solution:", part1(testGames))
 	fmt.Println("Solution:", part1(inputGames))
-	fmt.Println("part 2")
+	fmt.Println("Part 2")
 	fmt.Println("Test Solution:", part2(testGames))
 	fmt.Println("Solution:", part2(inputGames))
 	fmt.Println("")

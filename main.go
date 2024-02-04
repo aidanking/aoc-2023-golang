@@ -5,6 +5,7 @@ import (
 	"github.com/aidanking/aoc-2023-golang/day2"
 	"github.com/aidanking/aoc-2023-golang/day3"
 	"github.com/aidanking/aoc-2023-golang/day4"
+	"github.com/aidanking/aoc-2023-golang/day5"
 )
 
 func main() {
@@ -12,4 +13,5 @@ func main() {
 	day2.PrintSolution()
 	day3.PrintSolution()
 	day4.PrintSolution()
+	day5.PrintSolution()
 }
